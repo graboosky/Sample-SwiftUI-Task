@@ -1,0 +1,12 @@
+ output_dir: Sample-SwiftUI-Task/Utils/Generated/SwiftGen
+
+ xcassets:
+   inputs:
+     - Sample-SwiftUI-Task/Resources/Assets.xcassets
+   outputs:
+     - templateName: swift5
+       params:
+         forceProvidesNamespaces: true
+         forceFileNameEnum: true
+         enumName: SG
+       output: XCAssets+Generated.generated.swift

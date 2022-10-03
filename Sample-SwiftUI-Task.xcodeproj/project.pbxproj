@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		97E6C3CB28EB457E0057D062 /* Sample_SwiftUI_TaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E6C3CA28EB457E0057D062 /* Sample_SwiftUI_TaskApp.swift */; };
+		97C43D8B28ECA2000002309F /* ViewModel+Inputs.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 97C43D8928ECA2000002309F /* ViewModel+Inputs.stencil */; };
+		97C43D8C28ECA2000002309F /* View+Actions.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 97C43D8A28ECA2000002309F /* View+Actions.stencil */; };
+		97C43D8F28ECA2EA0002309F /* XCAssets+Generated.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C43D8E28ECA2EA0002309F /* XCAssets+Generated.generated.swift */; };
+		97C43D9328ECA5290002309F /* ViewModel+Inputs.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C43D9128ECA5290002309F /* ViewModel+Inputs.generated.swift */; };
+		97C43D9428ECA5290002309F /* View+Actions.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C43D9228ECA5290002309F /* View+Actions.generated.swift */; };
+		97E6C3CB28EB457E0057D062 /* SampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E6C3CA28EB457E0057D062 /* SampleApp.swift */; };
 		97E6C3CD28EB457E0057D062 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E6C3CC28EB457E0057D062 /* ContentView.swift */; };
 		97E6C3CF28EB457F0057D062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E6C3CE28EB457F0057D062 /* Assets.xcassets */; };
 		97E6C3D228EB457F0057D062 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E6C3D128EB457F0057D062 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		97C43D8928ECA2000002309F /* ViewModel+Inputs.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ViewModel+Inputs.stencil"; sourceTree = "<group>"; };
+		97C43D8A28ECA2000002309F /* View+Actions.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "View+Actions.stencil"; sourceTree = "<group>"; };
+		97C43D8E28ECA2EA0002309F /* XCAssets+Generated.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.generated.swift"; sourceTree = "<group>"; };
+		97C43D9128ECA5290002309F /* ViewModel+Inputs.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewModel+Inputs.generated.swift"; sourceTree = "<group>"; };
+		97C43D9228ECA5290002309F /* View+Actions.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Actions.generated.swift"; sourceTree = "<group>"; };
 		97E6C3C728EB457E0057D062 /* Sample-SwiftUI-Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sample-SwiftUI-Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		97E6C3CA28EB457E0057D062 /* Sample_SwiftUI_TaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample_SwiftUI_TaskApp.swift; sourceTree = "<group>"; };
+		97E6C3CA28EB457E0057D062 /* SampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleApp.swift; sourceTree = "<group>"; };
 		97E6C3CC28EB457E0057D062 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		97E6C3CE28EB457F0057D062 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97E6C3D128EB457F0057D062 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -32,6 +42,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97C43D8428ECA0D60002309F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				97E6C3CE28EB457F0057D062 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		97C43D8528ECA1930002309F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				97C43D8628ECA1BB0002309F /* Generated */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		97C43D8628ECA1BB0002309F /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				97C43D8D28ECA2980002309F /* SwiftGen */,
+				97C43D8728ECA1CF0002309F /* Sourcery */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		97C43D8728ECA1CF0002309F /* Sourcery */ = {
+			isa = PBXGroup;
+			children = (
+				97C43D9228ECA5290002309F /* View+Actions.generated.swift */,
+				97C43D9128ECA5290002309F /* ViewModel+Inputs.generated.swift */,
+				97C43D8828ECA1DD0002309F /* Templates */,
+			);
+			path = Sourcery;
+			sourceTree = "<group>";
+		};
+		97C43D8828ECA1DD0002309F /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				97C43D8A28ECA2000002309F /* View+Actions.stencil */,
+				97C43D8928ECA2000002309F /* ViewModel+Inputs.stencil */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		97C43D8D28ECA2980002309F /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				97C43D8E28ECA2EA0002309F /* XCAssets+Generated.generated.swift */,
+			);
+			path = SwiftGen;
+			sourceTree = "<group>";
+		};
 		97E6C3BE28EB457E0057D062 = {
 			isa = PBXGroup;
 			children = (
@@ -51,9 +113,10 @@
 		97E6C3C928EB457E0057D062 /* Sample-SwiftUI-Task */ = {
 			isa = PBXGroup;
 			children = (
-				97E6C3CA28EB457E0057D062 /* Sample_SwiftUI_TaskApp.swift */,
+				97C43D8528ECA1930002309F /* Utils */,
+				97C43D8428ECA0D60002309F /* Resources */,
+				97E6C3CA28EB457E0057D062 /* SampleApp.swift */,
 				97E6C3CC28EB457E0057D062 /* ContentView.swift */,
-				97E6C3CE28EB457F0057D062 /* Assets.xcassets */,
 				97E6C3D028EB457F0057D062 /* Preview Content */,
 			);
 			path = "Sample-SwiftUI-Task";
@@ -74,6 +137,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97E6C3D528EB457F0057D062 /* Build configuration list for PBXNativeTarget "Sample-SwiftUI-Task" */;
 			buildPhases = (
+				97C43D9028ECA35A0002309F /* Sourcery */,
+				97C43D8128ECA0120002309F /* SwiftGen */,
+				97C43D8328ECA0250002309F /* SwiftLint */,
 				97E6C3C328EB457E0057D062 /* Sources */,
 				97E6C3C428EB457E0057D062 /* Frameworks */,
 				97E6C3C528EB457E0057D062 /* Resources */,
@@ -127,18 +193,83 @@
 			files = (
 				97E6C3D228EB457F0057D062 /* Preview Assets.xcassets in Resources */,
 				97E6C3CF28EB457F0057D062 /* Assets.xcassets in Resources */,
+				97C43D8B28ECA2000002309F /* ViewModel+Inputs.stencil in Resources */,
+				97C43D8C28ECA2000002309F /* View+Actions.stencil in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		97C43D8128ECA0120002309F /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftgen > /dev/null; then\n  swiftgen config run --config \"${PROJECT_DIR}/.swiftgen.yml\"\nelse\n  echo \"warning: SwiftGen is not installed\"\nfi\n";
+		};
+		97C43D8328ECA0250002309F /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed\"\nfi\n";
+		};
+		97C43D9028ECA35A0002309F /* Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Sourcery;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  sourcery --config \"${PROJECT_DIR}/.sourcery.yml\"\nelse\n  echo \"warning: Sourcery is not installed\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		97E6C3C328EB457E0057D062 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97C43D9328ECA5290002309F /* ViewModel+Inputs.generated.swift in Sources */,
+				97C43D9428ECA5290002309F /* View+Actions.generated.swift in Sources */,
 				97E6C3CD28EB457E0057D062 /* ContentView.swift in Sources */,
-				97E6C3CB28EB457E0057D062 /* Sample_SwiftUI_TaskApp.swift in Sources */,
+				97E6C3CB28EB457E0057D062 /* SampleApp.swift in Sources */,
+				97C43D8F28ECA2EA0002309F /* XCAssets+Generated.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

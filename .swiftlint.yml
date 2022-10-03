@@ -1,0 +1,46 @@
+excluded:
+  - Pods/
+  - Pods
+  - ExternalLibraries
+  - CBB/Utils/Generated
+  - KMM
+
+disabled_rules:
+  - todo
+  
+opt_in_rules:
+- multiline_arguments
+- multiline_function_chains
+- multiline_parameters
+- operator_usage_whitespace
+- toggle_bool
+- unneeded_parentheses_in_closure_argument
+- yoda_condition
+- vertical_whitespace_closing_braces
+- closure_end_indentation
+
+line_length:
+  warning: 130
+  error: 150
+  ignores_function_declarations: true
+  ignores_comments: true
+  ignores_urls: true
+identifier_name:
+  min_length: 2
+nesting:
+  type_level: 2
+switch_case_alignment:
+  indented_cases: true
+  
+custom_rules:
+  swiftgen_assets:
+    name: "SwiftGen Assets"
+    regex: 'Image(\.init)?(\(uiImage: (UIImage)?(\.init)?\(named:"(.*)?"\)(!)?\))|(Image\(".*"\))'
+    message: "Use SG.Assets instead"
+    severity: warning
+  double_space:
+    include: "*.swift"
+    name: "Double Space"
+    regex: '([a-z,A-Z] \s+)'
+    message: "Double space between keywords"
+    severity: warning

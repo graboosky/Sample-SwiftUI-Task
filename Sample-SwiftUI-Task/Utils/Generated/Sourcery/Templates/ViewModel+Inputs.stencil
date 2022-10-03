@@ -1,0 +1,39 @@
+{% macro associatedValuePair associatedValue %}{% typed associatedValue as AssociatedValue %}{% if associatedValue.localName %}{{ associatedValue.localName }}: {% endif %}{{ associatedValue.typeName }}{% endmacro %}
+{% macro associatedValuesTuple array %}{% typed array as [AssociatedValue] %}({% for value in array %}{% call associatedValuePair value %}{{ ', ' if not forloop.last }}{% endfor %}){% endmacro %}
+{% macro associatedValuesNameList array %}{% typed array as [AssociatedValue] %}{% for value in array %}{% if value.localName %}{{ value.localName }}{% else %}argument{{ forloop.counter0 }}{% endif %}{{ ', ' if not forloop.last }}{% endfor %}{% endmacro %}
+import Foundation
+import Combine
+
+{% for type in types.all where type.implements.Actionable %}
+extension {{ type.name }} {
+    struct Input {
+    {% for actions in type.containedTypes|enum where actions.localName == "Action" %}
+        {% for case in actions.cases %}
+            {% if case.associatedValues.count == 0 %}
+        let {{ case.name }} = PassthroughSubject<Void, Never>()
+            {% elif case.associatedValues.count == 1 %}
+        let {{ case.name }} = PassthroughSubject<{{ case.associatedValues[0].typeName }}, Never>()
+            {% else %}
+        typealias {{ case.name|capitalize }}Arguments = {% call associatedValuesTuple case.associatedValues %}
+        let {{ case.name }} = PassthroughSubject<{{ case.name|capitalize }}Arguments, Never>()
+            {% endif %}
+        {% endfor %}
+
+        func send(_ action: Action) {
+            switch action {
+            {% for case in actions.cases %}
+                {% if case.associatedValues.count == 0 %}
+                case .{{ case.name }}: {{ case.name }}.send(())
+                {% elif case.associatedValues.count == 1 %}
+                case let .{{ case.name }}({% call associatedValuesNameList case.associatedValues %}): {{ case.name }}.send({% call associatedValuesNameList case.associatedValues %})
+                {% else %}
+                case let .{{ case.name }}({% call associatedValuesNameList case.associatedValues %}): {{ case.name }}.send(({% call associatedValuesNameList case.associatedValues %}))
+                {% endif %}
+            {% endfor %}
+            }
+        }
+    {% endfor %}
+    }
+}
+
+{% endfor %}

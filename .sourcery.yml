@@ -1,0 +1,9 @@
+sources:
+  include:
+    - Sample-SwiftUI-Task
+  exclude:
+    - Sample-SwiftUI-Task/Utils/Generated
+templates:
+    - Sample-SwiftUI-Task/Utils/Generated/Sourcery/Templates
+output:
+  path: Sample-SwiftUI-Task/Utils/Generated/Sourcery

@@ -1,0 +1,38 @@
+{% macro associatedValuesList array %}{% typed array as [AssociatedValue] %}({% for value in array %}{{ value.typeName }}{{ ', ' if not forloop.last }}{% endfor %}){% endmacro %}
+{% macro casesInitList array %}{% typed array as [EnumCase] %}{% for case in array %}{{ case.name }}: {% if case.associatedValues.count == 0 %}VoidAction{% else %}{{ case.name|upperFirstLetter }}{% endif %}? = nil{{ ', ' if not forloop.last }}{% endfor %}{% endmacro %}
+import SwiftUI
+
+typealias VoidAction = () -> Void
+{% for type in types.all where type.implements.ViewActions %}
+
+// Actions for {{ type.parentName }}
+
+struct {{ type.parentName }}Actions {
+    {% for case in type.cases %}
+        {% if case.associatedValues.count == 0 %}
+    let {{ case.name }}: VoidAction?
+        {% else %}
+    typealias {{ case.name|upperFirstLetter }} = {% call associatedValuesList case.associatedValues %} -> Void
+    let {{ case.name }}: {{ case.name|upperFirstLetter }}?
+        {% endif %}
+    {% endfor %}
+
+    init({% call casesInitList type.cases %}) {
+        {% for case in type.cases %}
+        self.{{ case.name }} = {{ case.name }}
+        {% endfor %}
+    }
+}
+
+private struct {{ type.parentName }}ActionsKey: EnvironmentKey {
+    static let defaultValue = {{ type.parentName }}Actions()
+}
+
+extension EnvironmentValues {
+    var {{ type.parentName|lowerFirstLetter }}Actions: {{ type.parentName }}Actions {
+        get { self[{{ type.parentName }}ActionsKey.self] }
+        set { self[{{ type.parentName }}ActionsKey.self] = newValue }
+    }
+}
+
+{% endfor %}
