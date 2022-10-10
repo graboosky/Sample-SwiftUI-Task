@@ -7,6 +7,11 @@ It is very simple application for showing how to use **SwiftUI**. It is written 
 
 * *#SwiftUI, #MVVM, #Combine, #await/async, #Core Data* 
 
+## Setup
+
+Due to the fact that some dependencies are not working well with SPM, this script will install some dependencies with Brew.
+Please navigate to project root and run `./setup.sh` in terminal.
+
 ## Architecture
 
 Completely created with Combine and SwiftUI with MVVM + C architecture and SOLID principles in mind.
