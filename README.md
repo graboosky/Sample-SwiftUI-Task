@@ -66,3 +66,4 @@ Above two files generate automatically actions available for view model (here sc
 Based on the protocol implementation, the Sourcery library scans design files and generates code. 
 
 Generated `actions` send input to view model via Combine.
+<img width="581" alt="Screenshot 2022-10-10 at 21 41 38" src="https://user-images.githubusercontent.com/15689585/195036184-6721d60c-233b-4ce5-927e-af320ddd7885.png">
