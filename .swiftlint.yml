@@ -1,10 +1,3 @@
-excluded:
-  - Pods/
-  - Pods
-  - ExternalLibraries
-  - CBB/Utils/Generated
-  - KMM
-
 disabled_rules:
   - todo
   
@@ -18,6 +11,7 @@ opt_in_rules:
 - yoda_condition
 - vertical_whitespace_closing_braces
 - closure_end_indentation
+- sorted_imports
 
 line_length:
   warning: 130

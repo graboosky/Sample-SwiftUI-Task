@@ -1,10 +1,10 @@
 {% macro associatedValuePair associatedValue %}{% typed associatedValue as AssociatedValue %}{% if associatedValue.localName %}{{ associatedValue.localName }}: {% endif %}{{ associatedValue.typeName }}{% endmacro %}
 {% macro associatedValuesTuple array %}{% typed array as [AssociatedValue] %}({% for value in array %}{% call associatedValuePair value %}{{ ', ' if not forloop.last }}{% endfor %}){% endmacro %}
 {% macro associatedValuesNameList array %}{% typed array as [AssociatedValue] %}{% for value in array %}{% if value.localName %}{{ value.localName }}{% else %}argument{{ forloop.counter0 }}{% endif %}{{ ', ' if not forloop.last }}{% endfor %}{% endmacro %}
-import Foundation
 import Combine
-
+import Foundation
 {% for type in types.all where type.implements.Actionable %}
+
 extension {{ type.name }} {
     struct Input {
     {% for actions in type.containedTypes|enum where actions.localName == "Action" %}
@@ -35,5 +35,4 @@ extension {{ type.name }} {
     {% endfor %}
     }
 }
-
 {% endfor %}
