@@ -19,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9781E16328F8E950005682F8 /* SampleAppStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SampleAppStorage; path = "Sample-SwiftUI-Task/Resources/Packages/SampleAppStorage"; sourceTree = "<group>"; };
 		97C43D8928ECA2000002309F /* ViewModel+Inputs.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ViewModel+Inputs.stencil"; sourceTree = "<group>"; };
 		97C43D8A28ECA2000002309F /* View+Actions.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "View+Actions.stencil"; sourceTree = "<group>"; };
 		97C43D8E28ECA2EA0002309F /* XCAssets+Generated.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.generated.swift"; sourceTree = "<group>"; };
@@ -42,6 +43,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		974A312F28F8CF7800F2B894 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				9781E16328F8E950005682F8 /* SampleAppStorage */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		974A313328F8DC8B00F2B894 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		97C43D8428ECA0D60002309F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,7 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				97E6C3C928EB457E0057D062 /* Sample-SwiftUI-Task */,
+				974A312F28F8CF7800F2B894 /* Packages */,
 				97E6C3C828EB457E0057D062 /* Products */,
+				974A313328F8DC8B00F2B894 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +167,8 @@
 			dependencies = (
 			);
 			name = "Sample-SwiftUI-Task";
+			packageProductDependencies = (
+			);
 			productName = "Sample-SwiftUI-Task";
 			productReference = 97E6C3C728EB457E0057D062 /* Sample-SwiftUI-Task.app */;
 			productType = "com.apple.product-type.application";
